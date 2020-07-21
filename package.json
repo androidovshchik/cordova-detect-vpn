@@ -10,19 +10,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/don/cordova-plugin-hello.git"
+    "url": "git+https://github.com/androidovshchik/cordova-hide-icon.git"
   },
   "keywords": [
     "cordova",
     "plugin",
-    "hello",
-    "ecosystem:cordova",
-    "cordova-android"
+    "android",
+    "icon"
   ],
   "author": "Vlad Kalyuzhnyu",
-  "license": "Apache-2",
   "bugs": {
-    "url": "https://github.com/don/cordova-plugin-hello/issues"
+    "url": "https://github.com/androidovshchik/cordova-hide-icon/issues"
   },
-  "homepage": "https://github.com/don/cordova-plugin-hello#readme"
+  "homepage": "https://github.com/androidovshchik/cordova-hide-icon#readme"
 }

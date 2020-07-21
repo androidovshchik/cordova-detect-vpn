@@ -1,4 +1,4 @@
-## cordova-hide-icon plugin
+# cordova-hide-icon plugin
 
 Simple plugin that returns your string prefixed with hello.
 

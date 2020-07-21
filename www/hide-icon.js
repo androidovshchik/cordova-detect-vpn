@@ -1,7 +1,8 @@
-/*global cordova, module*/
-
 module.exports = {
-    greet: function (name, successCallback, errorCallback) {
-        cordova.exec(successCallback, errorCallback, "Hello", "greet", [name]);
+    toggleIcon: function (enable, successCallback, errorCallback) {
+        cordova.exec(successCallback, errorCallback, "cordova-hide-icon", "toggleIcon", [enable]);
+    },
+    isIconHidden: function (successCallback, errorCallback) {
+        cordova.exec(successCallback, errorCallback, "cordova-hide-icon", "isIconHidden", []);
     }
 };
