@@ -1,26 +1,27 @@
 {
-  "name": "cordova-hide-icon",
+  "name": "cordova-app-icon",
   "version": "1.0.0",
-  "description": "A sample for a new cordova plugin",
+  "author": "Vlad Kalyuzhnyu",
+  "description": "Simple plugin that allows to control the visibility of the app icon",
   "cordova": {
-    "id": "cordova-hide-icon",
+    "id": "cordova-app-icon",
     "platforms": [
       "android"
     ]
   },
+  "homepage": "https://github.com/androidovshchik/cordova-app-icon#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/androidovshchik/cordova-hide-icon.git"
+    "url": "git+https://github.com/androidovshchik/cordova-app-icon.git"
+  },
+  "bugs": {
+    "url": "https://github.com/androidovshchik/cordova-app-icon/issues"
   },
   "keywords": [
     "cordova",
     "plugin",
     "android",
+    "app",
     "icon"
-  ],
-  "author": "Vlad Kalyuzhnyu",
-  "bugs": {
-    "url": "https://github.com/androidovshchik/cordova-hide-icon/issues"
-  },
-  "homepage": "https://github.com/androidovshchik/cordova-hide-icon#readme"
+  ]
 }
