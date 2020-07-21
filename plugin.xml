@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-app-icon" version="1.0.0">
     <name>cordova-app-icon</name>
+    <author>Vlad Kalyuzhnyu</author>
+    <description>Simple plugin that allows to control the visibility of the app icon</description>
+    <keywords>cordova,plugin,android,app,icon</keywords>
+    <repo>https://github.com/androidovshchik/cordova-app-icon.git</repo>
+    <issue>https://github.com/androidovshchik/cordova-app-icon/issues</issue>
 
-    <engines>
-        <engine name="cordova" version=">=3.2.0" />
-    </engines>
-
-    <asset src="www/hide-icon.js" target="js/hide-icon.js" />
-
-    <js-module src="www/hide-icon.js" name="AppIcon">
+    <js-module src="www/app-icon.js" name="AppIcon">
         <clobbers target="AppIcon" />
     </js-module>
 
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
-            <feature name="Hello">
+            <feature name="AppIconPlugin">
                 <param name="android-package" value="ru.androidovshchik.AppIconPlugin" />
             </feature>
         </config-file>
-        <source-file src="src/android/HideIconPlugin.java" target-dir="src/ru/androidovshchik" />
+        <source-file src="src/android/ru/androidovshchik/AppIconPlugin.java"
+            target-dir="src/ru/androidovshchik" />
     </platform>
 
 </plugin>
