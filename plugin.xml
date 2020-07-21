@@ -16,7 +16,7 @@
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="Hello">
-                <param name="android-package" value="ru.androidovshchik.Hello" />
+                <param name="android-package" value="ru.androidovshchik.HideIconPlugin" />
             </feature>
         </config-file>
         <framework src="relative/path/your.gradle" custom="true" type="gradleReference" />
