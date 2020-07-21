@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" id="com.example.hello" version="0.7.0">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-hide-icon" version="1.0.0">
     <name>cordova-hide-icon</name>
 
     <engines>
-        <engine name="cordova" version=">=3.4.0" />
+        <engine name="cordova" version=">=3.1.0" />
     </engines>
 
-    <asset src="www/hello.js" target="js/hello.js" />
+    <asset src="www/hide-icon.js" target="js/hide-icon.js" />
 
-    <js-module src="www/hello.js" name="hello">
-        <clobbers target="hello" />
+    <js-module src="www/hide-icon.js" name="AppIcon">
+        <clobbers target="AppIcon" />
     </js-module>
 
     <platform name="android">
@@ -18,8 +18,7 @@
                 <param name="android-package" value="ru.androidovshchik.HideIconPlugin" />
             </feature>
         </config-file>
-        <framework src="relative/path/your.gradle" custom="true" type="gradleReference" />
-        <source-file src="src/android/Hello.java" target-dir="src/com/example/plugin/" />
+        <source-file src="src/android/HideIconPlugin.java" target-dir="src/ru/androidovshchik" />
     </platform>
 
 </plugin>

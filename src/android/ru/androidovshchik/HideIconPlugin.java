@@ -17,11 +17,14 @@ public class HideIconPlugin extends CordovaPlugin {
     public boolean execute(String action, JSONArray data, CallbackContext callbackContext) {
         if (Build.VERSION.SDK_INT >= 29) {
             // see https://developer.android.com/reference/android/content/pm/LauncherApps#getActivityList(java.lang.String,%20android.os.UserHandle)
-            callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR, "As of Android Q (API 29) all app icons will be visible in the launcher no matter what unless special privileges"));
+            callbackContext.sendPluginResult(new PluginResult(
+                PluginResult.Status.ERROR,
+                "As of Android Q (API 29) all app icons will be visible in the launcher no matter what unless special privileges"
+            ));
             return true;
         }
         switch (action) {
-            case "toggleIcon":
+            case "toggle":
                 try {
                     toggleIcon(data.getBoolean(0));
                     callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.NO_RESULT));
@@ -30,7 +33,7 @@ public class HideIconPlugin extends CordovaPlugin {
                     callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.JSON_EXCEPTION));
                 }
                 break;
-            case "isIconHidden":
+            case "isHidden":
                 callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, isIconHidden()));
                 break;
             default:
