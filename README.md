@@ -1,6 +1,8 @@
-# cordova-hide-icon plugin
+# cordova-app-icon plugin
 
-Simple plugin that returns your string prefixed with hello.
+Simple plugin that allows to control the visibility of the app icon
+
+> As of Android Q (API 29) all app icons will be visible in the launcher no matter what unless [special privileges](https://developer.android.com/reference/android/content/pm/LauncherApps#getActivityList(java.lang.String,%20android.os.UserHandle))
 
 ## Using
 
@@ -17,15 +19,14 @@ Install the plugin
 Edit `www/js/index.js` and add the following code inside `onDeviceReady`
 
 ```js
-    var success = function(message) {
-        alert(message);
+// hide icon
+AppIcon.toggle(false);
+// check if icon is hidden
+AppIcon.isHidden(function(result) {
+    if (result) {
+        // currently icon is hidden    
     }
-
-    var failure = function() {
-        alert("Error calling Hello Plugin");
-    }
-
-    hello.greet("World", success, failure);
+});
 ```
 
 Install Android platform
