@@ -15,33 +15,26 @@ public class HideIconPlugin extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray data, CallbackContext callbackContext) {
-        final PluginResult result;
         if (Build.VERSION.SDK_INT >= 29) {
             // see https://developer.android.com/reference/android/content/pm/LauncherApps#getActivityList(java.lang.String,%20android.os.UserHandle)
-            return false;
+            callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR, "As of Android Q (API 29) all app icons will be visible in the launcher no matter what unless special privileges"));
+            return true;
         }
-
-        if (message != null && message.length() > 0) {
-            result = new PluginResult(PluginResult.Status.OK, message);
-        } else {
-            result = new PluginResult(PluginResult.Status.ERROR, "Expected one non-empty string argument.");
-        }
-        callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.ERROR, "Expected one non-empty string argument."));
         switch (action) {
             case "toggleIcon":
                 try {
                     toggleIcon(data.getBoolean(0));
+                    callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.NO_RESULT));
                 } catch (JSONException e) {
                     e.printStackTrace();
                     callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.JSON_EXCEPTION));
                 }
                 break;
             case "isIconHidden":
-                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.INVALID_ACTION,
-                    isIconHidden()));
+                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK, isIconHidden()));
                 break;
             default:
-                callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.INVALID_ACTION));
+                return false;
         }
         return true;
     }
