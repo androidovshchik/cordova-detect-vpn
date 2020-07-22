@@ -2,7 +2,7 @@
 
 Simple plugin that allows to control the visibility of the app icon
 
-> As of Android Q (API 29) all app icons will be visible in the launcher no matter what unless [special privileges](https://developer.android.com/reference/android/content/pm/LauncherApps#getActivityList(java.lang.String,%20android.os.UserHandle))
+> As of Android 10 Q (API 29) all app icons will be visible in the launcher no matter what unless [special privileges](https://developer.android.com/reference/android/content/pm/LauncherApps#getActivityList(java.lang.String,%20android.os.UserHandle))
 
 ## Getting started
 
@@ -33,6 +33,6 @@ Install Android platform
 
     cordova platform add android
     
-Run the code
+Run the app
 
-    cordova run
+    cordova run android
