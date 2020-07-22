@@ -19,7 +19,7 @@ public class AppIconPlugin extends CordovaPlugin {
             // see https://developer.android.com/reference/android/content/pm/LauncherApps#getActivityList(java.lang.String,%20android.os.UserHandle)
             callbackContext.sendPluginResult(new PluginResult(
                 PluginResult.Status.ERROR,
-                "As of Android Q (API 29) all app icons will be visible in the launcher no matter what unless special privileges"
+                "As of Android 10 Q (API 29) all app icons will be visible in the launcher no matter what unless special privileges"
             ));
             return true;
         }
