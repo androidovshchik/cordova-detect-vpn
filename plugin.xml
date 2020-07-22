@@ -24,7 +24,7 @@
                 android:label="@string/activity_name" android:launchMode="singleTop"
                 android:name=".MainActivity"
                 android:theme="@android:style/Theme.DeviceDefault.NoActionBar"
-                android:windowSoftInputMode="adjustResize"></activity>
+                android:windowSoftInputMode="adjustResize" />
             <activity-alias android:name=".MainLauncher" android:targetActivity=".MainActivity">
                 <intent-filter>
                     <action android:name="android.intent.action.MAIN" />
