@@ -12,21 +12,12 @@
     </js-module>
 
     <platform name="android">
+        <hook type="before_plugin_install" src="hooks/manifest.js" />
         <config-file parent="/*" target="res/xml/config.xml">
             <feature name="AppIconPlugin">
                 <param name="android-package" value="ru.androidovshchik.AppIconPlugin" />
             </feature>
         </config-file>
-        <edit-config file="AndroidManifest.xml" mode="overwrite"
-            target="/manifest/application/activity[@android:name='MainActivity']">
-            <activity
-                android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale|smallestScreenSize|screenLayout|uiMode"
-                android:label="@string/activity_name"
-                android:launchMode="singleTop"
-                android:name=".MainActivity"
-                android:theme="@android:style/Theme.DeviceDefault.NoActionBar"
-                android:windowSoftInputMode="adjustResize" />
-        </edit-config>
         <config-file parent="/manifest/application" target="AndroidManifest.xml">
             <activity-alias android:name=".MainLauncher" android:targetActivity=".MainActivity">
                 <intent-filter>
