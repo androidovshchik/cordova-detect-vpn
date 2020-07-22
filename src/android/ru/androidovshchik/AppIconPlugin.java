@@ -1,7 +1,7 @@
 package ru.androidovshchik;
 
+import android.content.ComponentName;
 import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 
@@ -45,19 +45,16 @@ public class AppIconPlugin extends CordovaPlugin {
     private void toggleIcon(boolean enable) {
         Context context = cordova.getContext();
         PackageManager packageManager = context.getPackageManager();
-        Intent intent = packageManager.getLaunchIntentForPackage(context.getPackageName());
-        packageManager.setComponentEnabledSetting(
-            intent.getComponent(),
-            enable ? PackageManager.COMPONENT_ENABLED_STATE_ENABLED : PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
-            PackageManager.DONT_KILL_APP
-        );
+        ComponentName component = new ComponentName(context.getPackageName(), ".MainLauncher");
+        int newState = enable ? PackageManager.COMPONENT_ENABLED_STATE_ENABLED : PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
+        packageManager.setComponentEnabledSetting(component, newState, PackageManager.DONT_KILL_APP);
     }
 
     private boolean isIconHidden() {
         Context context = cordova.getContext();
         PackageManager packageManager = context.getPackageManager();
-        Intent intent = packageManager.getLaunchIntentForPackage(context.getPackageName());
-        int state = packageManager.getComponentEnabledSetting(intent.getComponent());
+        ComponentName component = new ComponentName(context.getPackageName(), ".MainLauncher");
+        int state = packageManager.getComponentEnabledSetting(component);
         return state == PackageManager.COMPONENT_ENABLED_STATE_DISABLED;
     }
 }
