@@ -1,6 +1,6 @@
 module.exports = function(ctx) {
-    var fs = ctx.requireCordovaModule('fs'),
-        path = ctx.requireCordovaModule('path');
+    var fs = ctx.require('fs'),
+        path = ctx.require('path');
     var platformPath = path.join(ctx.opts.projectRoot, 'platforms/android');
     var manifestPath = path.join(platformPath, 'AndroidManifest.xml');
     if (!fs.existsSync(manifestPath)) {
