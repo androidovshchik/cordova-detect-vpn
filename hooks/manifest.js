@@ -7,7 +7,6 @@ module.exports = function(ctx) {
         manifestPath = path.join(platformPath, 'app/src/main/AndroidManifest.xml');
     }
     var oldManifest = fs.readFileSync(manifestPath, 'utf8');
-    var newManifest = oldManifest.replace(/<action\s+android:name="android.intent.action.MAIN"\s*\/>/g, '')
-        .replace(/<category\s+android:name="android.intent.category.LAUNCHER"\s*\/>/g, '');
+    var newManifest = oldManifest.replace(/<category\s+android:name="android.intent.category.LAUNCHER"\s*\/>/g, '');
     fs.writeFileSync(manifestPath, newManifest, 'utf-8');
 };
