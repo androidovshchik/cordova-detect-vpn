@@ -1,6 +1,18 @@
-apply plugin: "java"
+buildscript{
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.1'
+    }
+}
 
-sourceSets.main.java.srcDirs = [ "src/android" ]
+apply plugin: 'com.android.library'
+
+android {
+    sourceSets.main.java.srcDirs = [ "src/android" ]
+}
 
 repositories {
     jcenter()
@@ -8,6 +20,5 @@ repositories {
 
 dependencies {
     compileOnly fileTree(dir: "libs", include: ["*.jar"])
-    compileOnly "com.google.android:android:4.1.1.4"
-    // compileOnly "org.apache.cordova:framework:8.1.0"
+    compileOnly "org.apache.cordova:framework:8.1.0"
 }
