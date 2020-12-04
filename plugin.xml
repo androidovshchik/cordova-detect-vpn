@@ -17,6 +17,9 @@
                 <param name="android-package" value="ru.androidovshchik.DetectVPNPlugin" />
             </feature>
         </config-file>
+        <config-file parent="/manifest" target="AndroidManifest.xml">
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+        </config-file>
         <source-file src="src/android/ru/androidovshchik/DetectVPNPlugin.java"
             target-dir="src/ru/androidovshchik" />
     </platform>
