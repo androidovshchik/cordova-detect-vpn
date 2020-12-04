@@ -1,32 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?><!--suppress XmlUnboundNsPrefix -->
-<plugin id="cordova-app-icon" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
-    <name>cordova-app-icon</name>
+<plugin id="cordova-detect-vpn" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+    <name>cordova-detect-vpn</name>
     <author>Vlad Kalyuzhnyu</author>
-    <description>Simple plugin that allows to control the visibility of the app icon</description>
-    <keywords>cordova,plugin,android,app,icon</keywords>
-    <repo>https://github.com/androidovshchik/cordova-app-icon.git</repo>
-    <issue>https://github.com/androidovshchik/cordova-app-icon/issues</issue>
+    <description>Simple plugin that allows to detect VPN connection on device</description>
+    <keywords>cordova,plugin,android,detect,vpn</keywords>
+    <repo>https://github.com/androidovshchik/cordova-detect-vpn.git</repo>
+    <issue>https://github.com/androidovshchik/cordova-detect-vpn/issues</issue>
 
-    <js-module name="AppIcon" src="www/app-icon.js">
-        <clobbers target="AppIcon" />
+    <js-module name="DetectVPN" src="www/detect-vpn.js">
+        <clobbers target="DetectVPN" />
     </js-module>
 
     <platform name="android">
-        <hook type="before_plugin_install" src="hooks/manifest.js" />
         <config-file parent="/*" target="res/xml/config.xml">
-            <feature name="AppIconPlugin">
-                <param name="android-package" value="ru.androidovshchik.AppIconPlugin" />
+            <feature name="DetectVPNPlugin">
+                <param name="android-package" value="ru.androidovshchik.DetectVPNPlugin" />
             </feature>
         </config-file>
-        <config-file parent="/manifest/application" target="AndroidManifest.xml">
-            <activity-alias android:name=".MainLauncher" android:targetActivity=".MainActivity">
-                <intent-filter>
-                    <action android:name="android.intent.action.MAIN" />
-                    <category android:name="android.intent.category.LAUNCHER" />
-                </intent-filter>
-            </activity-alias>
-        </config-file>
-        <source-file src="src/android/ru/androidovshchik/AppIconPlugin.java"
+        <source-file src="src/android/ru/androidovshchik/DetectVPNPlugin.java"
             target-dir="src/ru/androidovshchik" />
     </platform>
 

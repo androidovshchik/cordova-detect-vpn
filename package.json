@@ -1,27 +1,27 @@
 {
-  "name": "cordova-app-icon",
+  "name": "cordova-detect-vpn",
   "version": "1.0.0",
   "author": "Vlad Kalyuzhnyu",
-  "description": "Simple plugin that allows to control the visibility of the app icon",
+  "description": "Simple plugin that allows to detect VPN connection on device",
   "cordova": {
-    "id": "cordova-app-icon",
+    "id": "cordova-detect-vpn",
     "platforms": [
       "android"
     ]
   },
-  "homepage": "https://github.com/androidovshchik/cordova-app-icon#readme",
+  "homepage": "https://github.com/androidovshchik/cordova-detect-vpn#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/androidovshchik/cordova-app-icon.git"
+    "url": "git+https://github.com/androidovshchik/cordova-detect-vpn.git"
   },
   "bugs": {
-    "url": "https://github.com/androidovshchik/cordova-app-icon/issues"
+    "url": "https://github.com/androidovshchik/cordova-detect-vpn/issues"
   },
   "keywords": [
     "cordova",
     "plugin",
     "android",
-    "app",
-    "icon"
+    "detect",
+    "vpn"
   ]
 }

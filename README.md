@@ -1,8 +1,6 @@
-# cordova-app-icon plugin
+# cordova-vpn-detect plugin
 
-Simple plugin that allows to control the visibility of the app icon
-
-> As of Android 10 Q (API 29) all app icons will be visible in the launcher no matter what unless [special privileges](https://developer.android.com/reference/android/content/pm/LauncherApps#getActivityList(java.lang.String,%20android.os.UserHandle))
+Simple plugin that allows to detect VPN connection on device
 
 ## Getting started
 
@@ -13,18 +11,15 @@ Create a new Cordova Project
 Install the plugin
 
     $ cd example
-    $ cordova plugin add https://github.com/androidovshchik/cordova-app-icon.git
+    $ cordova plugin add https://github.com/androidovshchik/cordova-vpn-detect.git
     
 
 Edit `www/js/index.js` and add the following code inside `onDeviceReady`
 
 ```js
-// hide icon
-AppIcon.toggle(false);
-// check if icon is hidden
-AppIcon.isHidden(function(result) {
+DetectVPN.isEnabled(function(result) {
     if (result) {
-        // currently icon is hidden    
+        // there was found VPN connection
     }
 });
 ```
